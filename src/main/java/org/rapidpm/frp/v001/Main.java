@@ -20,12 +20,13 @@ public class Main {
         .runAsync(() -> System.out.println("Hello reactive World"));
 
 
-    final CompletableFuture<String> cfCallableA = CompletableFuture.supplyAsync(new Supplier<String>() {
-      @Override
-      public String get() {
-        return "Hello reactive World";
-      }
-    });
+    final CompletableFuture<String> cfCallableA = CompletableFuture
+        .supplyAsync(new Supplier<String>() {
+          @Override
+          public String get() {
+            return "Hello reactive World";
+          }
+        });
 
     final CompletableFuture<String> cfCallableB = CompletableFuture
         .supplyAsync(() -> "Hello reactive World");
